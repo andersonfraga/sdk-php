@@ -1,0 +1,5 @@
+MercadoPago SDK/php - Release notes
+-------------------------------------------
+31 Octubre 2011 - Vs 0.0.1
+
+

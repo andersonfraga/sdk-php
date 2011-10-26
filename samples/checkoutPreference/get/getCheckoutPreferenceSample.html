@@ -1,0 +1,32 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="preference_get">
+            <div style="margin-right:100px; margin-left:50px">
+                <H1 style="margin-top:10px"><B>Get Checkout Preference</B></H1>
+		<p>* Datos obligatorios</p>
+                <form action="getCheckoutPreferenceSample.php" method="GET">
+                    <ul style="list-style:none">
+			<li>
+			    <label>
+				<span style="margin:10px -30px"><B>ACCESS TOKEN<em>*</em></B></span>
+                            	<input  style="margin:10px 75px" type="text" id="access_token" name="access_token">
+                            </label>
+                        </li>
+			<br>
+                        <li>
+                            <label>
+                                <span style="margin:10px -30px">Preference id:<em>*</em></span>
+                                <input type="text" id="id" style="margin:10px 75px" name="preference_id" value="" size="30">
+                            </label>
+                        </li>
+                    </ul>
+                    <p style="margin-left:240px">
+                        <input type="submit" id="preference_get_function" name="preference_get_function" value="Get">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="collection_search">
+            <div style="margin-right:100px; margin-left:50px">
+                <H1 style="margin-top:10px"><B>Collection search</B></H1>
+		<p>* Datos obligatorios</p>
+                <form action="searchCollectionSample.php" method="GET">
+
+                    <!-- Definimos la variable de json_return para poder retornar el json de respuesta con un formato en HTML o puro -->
+                    <!--<input type="hidden" value="json" id="json_return" name="json_return">-->
+                    <input type="hidden" value="html" id="json_return" name="json_return">
+
+                    <ul style="list-style:none">
+			<li>
+                            <div><B>ACCESS TOKEN</B></div>
+                            <input type="text" id="access_token" name="access_token">
+                        </li>
+			<br>
+                        <div><B>Filters</B></div>
+                        <div>
+			    <li>
+                                <label>
+                                    <span>collection_id:</span>
+                                    <input type="text" id="collection_id" name="collection_id" value="" size="10">
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <span>site_id:<em>*</em></span>
+                                    <input type="text" id="site_id" name="site_id" value="" size="10">
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <span>external_reference:</span>
+                                    <input type="text" id="external_reference" name="external_reference" value="" size="20">
+                                </label>
+                            </li>
+                        </div>
+                        <div>
+                            <li>
+                                <label>
+                                    <span>offset:</span>
+                                    <input type="text" id="offset" required="required" name="offset" value="0" size="5">
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <span>limit:</span>
+                                    <input type="text" id="limit" name="limit" value="30" size="5">
+                                </label>
+                            </li>
+                        </div>
+                    </ul>
+                    <p style="margin-left:200px">
+                        <input type="submit" id="get_collection_search_list" name="get_collection_search_list" value="Search">
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </body>
+    <html>

@@ -1,0 +1,262 @@
+ 	    <h2>
+                Samples description<a name="sampledescription" id="sampledescription"></a>
+	    </h2>
+        
+            <ul type="disc">
+                <li><a href="#CreateAccessToken">Create access token</a></li>
+                <li><a href="#RefreshAccessToken">Refresh access token</a></li>
+                <li><a href="#GetPreference">Get checkout preference</a></li>
+                <li><a href="#CreatePreference">Create checkout preference</a></li>
+                <li><a href="#UpdatePreference">Update checkout preference</a></li>
+                <li><a href="#SearchCollection">Search collection</a></li>
+            </ul>
+           
+            <h3>
+                <a id="CreateAccessToken">Create access token</a>
+	    </h3>
+            <p>This sample creates an access token with your client credentials.</p>
+		<h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+            <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="samples/accessToken/create/createAccessTokenSample.html" target="_blank"><code>createAccessToken.html</code></a></p>
+                    </td>
+                    <td>
+                        <p>This file contains a button to run example.</p>
+                        <p>Calls createAccessTokenSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>createAccessTokenSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used to connect with Auth service sending client credentials. It shows accessData structure.</p>
+                        <p>Called by <a href="samples/accessToken/create/createAccessTokenSample.html" target="_blank">createAccessToken.html</a></p>
+                        <p>Calls authService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                <a id="RefreshAccessToken">Refresh access token</a>
+	    </h3>
+            <p>This sample re-use an access token, wich autorization time has expired. You need the refresh_token data obtained with the access token. </p>
+	    <h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+            <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a href="samples/accessToken/refresh/refreshAccessTokenSample.html" target="_blank"><code>refreshAccessToken.html</code></a>
+			</p>
+                    </td>
+                    <td>
+                        <p>This file contains a form to send refresh_token to refreshAccessTokenSample.php.</p>
+                        <p>Calls refreshAccessTokenSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>refreshAccessTokenSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used to connect with Auth service to refresh an access token. It shows accessData structure.</p>
+                        <p>Called by <a href="samples/accessToken/refresh/refreshAccessTokenSample.html" target="_blank">refreshAccessToken.html</a></p>
+                        <p>Calls authService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+	    <h3>
+                <a id="CreatePreference">Create checkout preference</a>
+	    </h3>
+            <p>This sample creates a new checkout preference with data populated by user.</p>
+            <h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+	    <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><a href="samples/checkoutPreference/create/createCheckoutPreferenceSample.html" target="_blank"><code>createCheckoutPreference.html</code></a></p>
+                    </td>
+                    <td>
+                        <p>This file contains a form to send checkout preference data and access token to createCheckoutPreferenceSample.php.</p>
+                        <p>Calls createCheckoutPreferenceSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>createCheckoutPreferenceSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used to connect with Checkout service and create a new checkout preference. It shows created checkout preference.</p>
+                        <p>Called by <a href="samples/checkoutPreference/create/createCheckoutPreferenceSample.html" target="_blank">createCheckoutPreference.html</a></p>
+                        <p>Calls authService.php,checkoutService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                <a id="GetPreference">Get checkout preference</a>
+	    </h3>
+            <p>This sample get a created checkout preference with a preference_id.</p>
+	    <h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+            <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a href="samples/checkoutPreference/get/getCheckoutPreferenceSample.html" target="_blank"><code>getCheckoutPreference.html</code></a>
+			</p>
+                    </td>
+                    <td>
+                        <p>This file contains a form to send preference_id to getCheckoutPreferenceSample.php.</p>
+                        <p>Calls getCheckoutPreferenceSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>getCheckoutPreferenceSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used to connect with Checkout service to get a checkout preference. It renders checkout preference obtain </p>
+                        <p>Called by <a href="samples/checkoutPreference/get/getCheckoutPreferenceSample.html" target="_blank">getCheckoutPreference.html</a></p>
+                        <p>Calls authService.php,checkoutService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                <a id="UpdatePreference">Update checkout preference</a>
+	    </h3>
+            <p>This sample updates a created checkout preference with data populated by user.</p>
+            <h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+	    <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a href="samples/checkoutPreference/update/updateCheckoutPreferenceSample.html" target="_blank"><code>updateCheckoutPreference.html</code></a>
+			</p>
+                    </td>
+                    <td>
+                        <p>This file contains a form to send update checkout preference data to updateCheckoutPreferenceSample.php.</p>
+                        <p>Calls updateCheckoutPreferenceSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>updateCheckoutPreferenceSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used to connect with Checkout service and update a created checkout preference. </p>
+                        <p>Called by <a href="samples/checkoutPreference/update/updateCheckoutPreferenceSample.html" target="_blank">updateCheckoutPreference.html</a></p>
+                        <p>Calls  authService.php,checkoutService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+            <h3>
+                <a id="SearchCollection">Search collection</a>
+	    </h3>
+            <p>This sample get a collection list using search filters:</p>
+	    <h4><font color="green"><b>Don't forget you need to configurate your client credentials in config.php file (php/src/config.php) before trying our examples!!</b></font></h4>
+            <p>The files for this sample are:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>File</b>
+			</p>
+                    </td>
+                    <td>
+                        <p  align="center" style='text-align: center'>
+                            <b>Description</b>
+			</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            <a href="samples/collection/search/searchCollectionSample.html" target="_blank"><code>searchCollection.html</code></a>
+			</p>
+                    </td>
+                    <td>
+                        <p>This file contains a form to send search filters to searchCollectionSample.php.</p>
+                        <p>Calls searchCollectionSample.php</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><code>searchCollectionSample.php</code></p>
+                    </td>
+                    <td>
+                        <p>This example is used for connect with Collection service and show a list of collections obtain respect filters.</p>
+                        <p>Called by <a href="samples/collection/search/searchCollectionSample.html" target="_blank">searchCollection.html</a></p>
+                        <p>Calls authService.php,collectionService.php</p>
+                        <p>Uses config.php</p>
+                    </td>
+                </tr>
+            </table>
+            <p>&nbsp;</p>

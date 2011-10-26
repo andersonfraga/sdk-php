@@ -1,0 +1,28 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="access_token_refresh">
+            <div style="margin-right:100px; margin-left:50px">
+                <H1 style="margin-top:10px"><B>Refresh access token</B></H1>
+		<p>* Datos obligatorios</p>
+                <form action="refreshAccessTokenSample.php" method="GET">
+
+                    <!-- Definimos la variable de json_return para poder retornar el json de respuesta con un formato en HTML o puro -->
+                    <!--<input type="hidden" value="json" id="json_return" name="json_return">-->
+
+                    <ul style="list-style:none">
+                        <label>
+                            <span style="margin:10px -30px">Refresh token:<em>*</em></span>
+                            <input type="text" id="refresh_token" style="margin:10px 75px" name="refresh_token" value="" size="30">
+                        </label>
+                    </ul>
+                    <p class="actions"  style="margin-left:200px">
+                        <input type="submit" id="access_token_refresh_function" name="create_accessToken_refresh_function" value="Refresh access token">
+                    </p>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

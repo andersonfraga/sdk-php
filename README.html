@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>MercadoPago SDK - Php</title>
+    </head>
+    <body lang="EN-US" style='font-family: Helvetica'>
+        <div>
+            <h1>SDK Using PHP</h1>
+            <h2>Version 0.0.1 / Date 10/31/2011</h2>
+            <p>SDK is a group of libreries, made to simplify developers the interaction with our APIs. This version contains the interacion with three of them. These are Checkout Preference API, oAuth API and Collections API.</p>
+            <p>&nbsp;</p>
+	    <h3>----- For a faster and easier integration you can use our <a href="#sampledescription">examples</a>, just customize with your data and try it!! -----</h3>
+	    <p>This document contains the following sections:</p>
+            <ul>
+                <li><a href="#requiredsoftware">Required Software</a></li>
+		<li><a href="#servicesdescription">Services Description</a></li>
+                <li><a href="#installation">Installing Samples</a></li>
+                <li><a href="#runningsamples">Running Samples</a></li>
+                <li><a href="#sampledescription">Samples description</a></li>
+            </ul>
+            <h2>Required Software<a name="requiredsoftware" id="requiredsoftware"></a></h2>
+            <p>The following software is required:</p>
+            <table border="1" cellpadding="5" width="1000px">
+                <tr>
+                    <td>
+                        <p><b>Software</b></p>
+                    </td>
+                    <td>
+                        <p><b>Version</b></p>
+                    </td>
+                    <td><p><b>Download Location</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>PHP</p>
+                    </td>
+                    <td>
+                        <p>5.3.x or greater</p>
+                    </td>
+                    <td>
+                        <p><a href="http://www.php.net/downloads.php" target="_blank">http://www.php.net/downloads.php</a></p>
+                    </td>
+                </tr>
+		 <tr>
+                    <td>
+                        <p>Curl extension</p>
+                    </td>
+                    <td>
+                        <p>7.21.0 or greater</p>
+                    </td>
+                    <td>
+                        <p><a href="http://www.php.net/manual/en/intro.curl.php" target="_blank">http://www.php.net/manual/en/intro.curl.php</a></p>
+                    </td>
+                </tr>
+		 <tr>
+            </table>
+	    <h2>
+  		Services description<a id="servicesdescription"></a>
+	    </h2>
+		 <table border="1" cellpadding="5" width="1000px">
+		        <tr>
+		            <td>
+		                <p align="center" style='text-align: center'>
+		                    <b>Class</b>
+				</p>
+		            </td>
+			    <td>
+		                <p  align="center" style='text-align: center'>
+		                    <b>Service</b>
+				</p>
+		            </td>
+		            <td>
+		                <p  align="center" style='text-align: center'>
+		                    <b>Description</b>
+				</p>
+		            </td>
+		        </tr>
+		        <tr>
+		            	<td><p><b><code>AuthService</code></b></p></td>
+				<td><p><code>create_access_data</code></p></td>	
+				<td>
+					<p>This Service receives the client_credentials and starts the request to oAuth API. On success returns an accessData Object, otherwise returns an exception.</p>
+					<p>Example of use:</p>					
+					<p><code>$authService = new AuthService();</code></p>
+					<p><code>$accessData= $authService->create_access_data(CLIENT_ID,CLIENT_SECRET);</code></p>
+				</td>
+			</tr>
+       			<tr>
+		            	<td></td>
+				<td><p><code>refresh_access_token</p></code></td>	
+				<td>
+					<p>This Service receives the client_credentials and refresh_token to start the request to oAuth API. On success returns an accessData Object with autorization data(included the access_token refreshed),otherwise returns an exception.</p>
+					<p>Example of use:</p>
+					<p><code>$authService = new AuthService();</code></p>
+					<p><code>$accessData= $authService->refresh_access_token(CLIENT_ID,CLIENT_SECRET, $refreshToken);</code></p>
+				</td>
+			</tr>
+			<tr>
+		            	<td><p><b><code>CheckoutService</code></b></p></td>
+				<td><p><code>create_checkout_preference</code></p></td>	
+				<td>
+					<p>This Service receives an access token and checkoutPreferenceData Object to execute a Post request to Preference API. On success returns a checkoutPreference Object, otherwise returns an exception. Once you created the checkout preference, you can use init_point url to open checkout flow. More information <a href="http://developers.mercadopago.com/br/codes/api_cho" target="_blank"> here</a></p>
+					<p>Example of use:</p>
+					<p><code>$checkoutService = new CheckoutService();</code></p>
+   					<p><code>$checkoutPreference=$checkoutService->create_checkout_preference($checkoutPreferenceData,$access_token);</code></p>
+				</td>
+			</tr>
+       			<tr>
+		            	<td></td>
+				<td><p><code>get_checkout_preference</code></p></td>	
+				<td>
+					<p>This Service receives an access token and a checkoutPreference Id and starts a Get request to Preference API. On success returns a checkoutPreference Object, otherwise returns an exception.</p>
+					<p>Example of use:</p>
+					<p><code>$checkoutService = new CheckoutService();</code></p>
+					<p><code>$checkoutPreference=$checkoutService->get_checkout_preference($preference_id,$access_token);</code></p>
+				</td>
+			</tr>
+       			<tr>
+		            	<td></td>
+				<td><p><code>update_checkout_preference</code></p></td>	
+				<td>
+					<p>This Service receives a checkoutPreferenceData Object and access token to start a Put request to Preference API. On success returns a 201 status,otherwise returns an exception.</p>
+					<p>Example of use:</p>					
+					<p><code>$checkoutService = new CheckoutService();</code></p>
+					<p><code>$checkoutPreferenceStatus=$checkoutService->update_checkout_preference($preference_id,$checkoutPreferenceData,$access_token);</code></p>
+				</td>
+			</tr>
+       			<tr>
+		            	<td><p><b><code>CollectionService</code></b></p></td>
+				<td><p><code>search_collection</code></p></td>	
+				<td>
+					<p>This Service receives an array of filters and an access token to execute a Search request to Collection API. On success return a list of collection Objects, otherwise returns an exception.</p>
+					<p>Example of use:</p>
+					<p><code>$collectionService = new CollectionService();</code></p>
+					<p><code>$collectionList=$collectionService->search_collection($filters,$access_token);</code></p>
+				</td>
+			</tr>
+    		
+            	
+            	</table>
+	   <ul>
+                <li>OAuth API description: <a href="http://developers.mercadopago.com/ar/codes/api/aut" target="_blank">Argentina</a>. <a href="http://developers.mercadopago.com/br/codes/api/aut" target="_blank">Brasil</a></li>
+		<li>Checkout API description: <a href="http://developers.mercadopago.com/ar/codes/api_cho" target="_blank">Argentina</a>. <a href="http://developers.mercadopago.com/br/codes/api_cho" target="_blank">Brasil</a></li>
+                <li>Sites API <a href="https://api.mercadolibre.com/sites/" target="_blank">here</a></li>
+                <li>Currencies API <a href="https://api.mercadolibre.com/currencies/" target="_blank">here</a></li>
+                <li>Payment methods API:<a href="https://api.mercadolibre.com/sites/MLA/payment_methods" target="_blank">Argentina</a>. <a href="https://api.mercadolibre.com/sites/MLB/payment_methods" target="_blank">Brasil</a></li>
+                <li>Payment types API <a href="https://api.mercadolibre.com/payment_types" target="_blank">here</a></li>
+          </ul>
+            <h2>
+  		Installing Samples<a name="installation" id="installation"></a>
+	    </h2>
+            <p>Copy the samples folder, to the docroot of the WebFrefresh
+Server.</p>
+	     <table border="3" cellpadding="5" width="800px">
+                <tr>
+                    <td>
+			Before you can use our samples it's totaly necesary you configurate the config.php file(php/src/config.php). This file contains your credentials needed by oAuth API.
+			<p>Authentication info <a href="http://developers.mercadopago.com/br/codes/aut">here</a></p>
+		    </td>
+		</tr>
+	    </table>
+            <h2>
+		Running Samples<a name="runningsamples" id="runningsamples"></a>
+	    </h2>
+            <p>First, make sure that you have installed the <a href="#requiredsoftware">required software</a> and <a href="#installation">samples</a></p>
+            <p>You can run samples by entering the following address in a web browser:</p>
+            <pre>http://<em>&lt;host&gt;</em>/php/samples/<em>name_of_example.html</em></pre>
+	    <h2>
+                Samples description<a name="sampledescription" id="sampledescription"></a>
+	    </h2>
+  	    <p>You can find a complete description about Samples <a href="README-examples.html">here</a>
+        
+	<p>More information at <a href="http://developers.mercadopago.com/br">Developers site</a>
+    </div>
+</body>
+</html>

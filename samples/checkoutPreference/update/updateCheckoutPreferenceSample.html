@@ -1,0 +1,134 @@
+<html>
+    <head>
+    </head>
+    <body>
+
+        <div id="preference_update">
+            <div style="margin-right:100px; margin-left:50px; padding-bottom:0px">
+                <H1 style="margin-top:10px"><B>Checkout Preference update</B></H1>
+		<p>* Datos obligatorios</p>
+                <form action="updateCheckoutPreferenceSample.php" method="GET">
+                    <ul style="list-style:none">
+			<li>
+			    <label>
+				<span style="margin:10px -30px"><B>ACCESS TOKEN<em>*</em></B></span>
+                            	<input  style="margin:10px 75px" type="text" id="access_token" name="access_token">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span style="margin:10px -30px">Preference id: <em>*</em></span>
+                                <input type="text" name="preference_id" id="id" style="margin:10px 70px" value="" size="30">
+                            </label>
+                        </li>
+                        <li>
+                            <div><B>ITEM</B></div>
+                            <label>
+                                <span>Id:</span>
+                                <input type="text" id="item_id" name="item_id">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Title <em>*</em></span>
+                                <input type="text" id="item_title" name="item_title" value="title updated">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Description: </span>
+                                <input type="text" id="item_description" name="item_description">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Quantity: <em>*</em></span>
+                                <input type="text" id="item_quantity" name="item_quantity" value="1">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Unit Price: <em>*</em></span>
+                                <input type="text" id="item_unit_price"  name="item_unit_price" value="3.5">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Currency id: <em>*</em></span>
+                                <input type="text" id="item_currency_id" name="item_currency_id" value="BRL">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Picture Url:</span>
+                                <input type="text" id="item_picture_url" name="item_picture_url">
+                            </label>
+                        </li>
+                        <li>
+                            <div><B>PAYER</B></div>
+                            <label>
+                                <span>Payer Name:</span>
+                                <input type="text" id="payer_name" name="payer_name">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Payer Surname:</span>
+                                <input type="text" id="payer_surname" name="payer_surname">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Payer Email:</span>
+                                <input type="text" id="payer_email" name="payer_email">
+                            </label>
+                        </li>
+                        <li>
+                            <div><B>CALLBACK</B></div>
+                            <label>
+                                <span>Success:</span>
+                                <input type="text" id="back_urls_success" name="back_urls_success">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Pending:</span>
+                                <input type="text" id="back_urls_pending" name="back_urls_pending">
+                            </label>
+                        </li>
+                        <li>
+                            <div><B>PAYMENT METHODS</B></div>
+                            <label>
+                                <span style="width=170px">Excluded methods:</span>
+                                <input type="text" id="payment_methods_exc_payment_methods" name="payment_methods_exc_payment_methods" value="diners,aura">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span style="width=170px">Excluded types:</span>
+                                <input type="text" id="payment_methods_exc_payment_types" name="payment_methods_exc_payment_types"  value="bank_transfer,ticket">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>Installments:</span>
+                                <input type="text" id="payment_methods_installments" name="payment_methods_installments">
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <span>External reference</span>
+                                <input type="text" id="external_reference" name="external_reference">
+                            </label>
+                        </li>
+
+                    </ul>
+
+                    <p style="margin-left:200px">
+                        <input type="submit" value="Update" id="preference_update_function">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
